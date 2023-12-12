@@ -17,8 +17,8 @@ namespace Demo2
         {
             InitializeComponent();
         }
-        HObject ho_image, ho_GrayImage, ho_Rectangle, ho_ImageScaleMax, ho_Region1;
-        HObject ho_RegionErosion;
+        HObject ho_image, ho_Rectangle;
+        HTuple hv_Number = new HTuple();
         private void open_button_Click(object sender, EventArgs e)
         {
             try
@@ -33,17 +33,6 @@ namespace Demo2
                 {
                     image_Path = opnDlg.FileName;
                     HOperatorSet.ReadImage(out ho_image, image_Path);
-                    /*
-                    HOperatorSet.Rgb1ToGray(ho_image, out ho_GrayImage);
-                    HOperatorSet.ScaleImageMax(ho_GrayImage, out ho_ImageScaleMax);
-
-                    HOperatorSet.BinaryThreshold(ho_ImageScaleMax, out ho_Region1, "max_separability", 
-                    "light", out hv_UsedThreshold);
-                    HOperatorSet.ErosionCircle(ho_Region1, out ho_RegionErosion, 20);
-                    HObject ExpTmpOutVar_0;
-                    HOperatorSet.ErosionCircle(ho_RegionErosion, out ExpTmpOutVar_0, 20);
-                    ho_Region1 = ExpTmpOutVar_0;
-                     */
 
                     HOperatorSet.GetImageSize(ho_image, out hv_width, out hv_Height);
                     HOperatorSet.SetPart(hWindowControl1.HalconWindow, 0, 0, hv_Height - 1, hv_width - 1);
@@ -67,6 +56,34 @@ namespace Demo2
             out hv_Column2);
             HOperatorSet.GenRectangle1(out ho_Rectangle, hv_Row1, hv_Column1, hv_Row2, hv_Column2);
             HOperatorSet.DispObj(ho_Rectangle, hWindowControl1.HalconWindow);
+
+        }
+
+        private void count_button_Click(object sender, EventArgs e)
+        {
+            HObject ho_GrayImage, ho_ImageReduced, ho_ImageScaleMax;
+            HObject ho_Region1, ho_ConnectedRegions, ho_SelectedRegions, ho_RegionErosion;
+            HTuple hv_UsedThreshold = new HTuple();
+            HOperatorSet.Rgb1ToGray(ho_image, out ho_GrayImage);
+            HOperatorSet.ReduceDomain(ho_GrayImage, ho_Rectangle, out ho_ImageReduced);
+            HOperatorSet.ScaleImageMax(ho_ImageReduced, out ho_ImageScaleMax);
+            HOperatorSet.BinaryThreshold(ho_ImageScaleMax, out ho_Region1, "max_separability", 
+                                        "light", out hv_UsedThreshold);
+            HOperatorSet.ErosionCircle(ho_Region1, out ho_RegionErosion, 20);
+            HObject ExpTmpOutVar_0;
+            HOperatorSet.ErosionCircle(ho_RegionErosion, out ExpTmpOutVar_0, 20);
+            ho_Region1 = ExpTmpOutVar_0;
+
+            HOperatorSet.Connection(ho_Region1, out ho_ConnectedRegions);
+            HOperatorSet.SelectShape(ho_ConnectedRegions, out ho_SelectedRegions, "area", 
+                                    "and", 500, 5000);
+            HOperatorSet.CountObj(ho_SelectedRegions, out hv_Number);
+
+            textBox1.Text = hv_Number.ToString();
+            HOperatorSet.ClearWindow(hWindowControl1.HalconWindow);
+            HOperatorSet.SetDraw(hWindowControl1.HalconWindow, "fill");
+            HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
+            HOperatorSet.DispObj(ho_SelectedRegions, hWindowControl1.HalconWindow);
 
         }
     }
