@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.hWindowControl1 = new HalconDotNet.HWindowControl();
             this.open_button = new System.Windows.Forms.Button();
             this.ROI_Button = new System.Windows.Forms.Button();
@@ -36,6 +37,8 @@
             this.reduce_num = new System.Windows.Forms.Button();
             this.add_num = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.title = new System.Windows.Forms.Label();
+            this.path = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // hWindowControl1
@@ -43,11 +46,11 @@
             this.hWindowControl1.BackColor = System.Drawing.Color.Black;
             this.hWindowControl1.BorderColor = System.Drawing.Color.Black;
             this.hWindowControl1.ImagePart = new System.Drawing.Rectangle(0, 0, 640, 480);
-            this.hWindowControl1.Location = new System.Drawing.Point(0, 1);
+            this.hWindowControl1.Location = new System.Drawing.Point(38, 123);
             this.hWindowControl1.Name = "hWindowControl1";
-            this.hWindowControl1.Size = new System.Drawing.Size(770, 775);
+            this.hWindowControl1.Size = new System.Drawing.Size(733, 524);
             this.hWindowControl1.TabIndex = 0;
-            this.hWindowControl1.WindowSize = new System.Drawing.Size(770, 775);
+            this.hWindowControl1.WindowSize = new System.Drawing.Size(733, 524);
             // 
             // open_button
             // 
@@ -116,11 +119,36 @@
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
+            // title
+            // 
+            this.title.AutoSize = true;
+            this.title.BackColor = System.Drawing.Color.Transparent;
+            this.title.Font = new System.Drawing.Font("隶书", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.title.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.title.Location = new System.Drawing.Point(275, 19);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(237, 36);
+            this.title.TabIndex = 8;
+            this.title.Text = "图像显示区域";
+            // 
+            // path
+            // 
+            this.path.AutoSize = true;
+            this.path.BackColor = System.Drawing.Color.Transparent;
+            this.path.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.path.Location = new System.Drawing.Point(45, 102);
+            this.path.Name = "path";
+            this.path.Size = new System.Drawing.Size(0, 18);
+            this.path.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1078, 778);
+            this.Controls.Add(this.path);
+            this.Controls.Add(this.title);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.reduce_num);
             this.Controls.Add(this.add_num);
@@ -146,6 +174,8 @@
         private System.Windows.Forms.Button reduce_num;
         private System.Windows.Forms.Button add_num;
         private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.Label title;
+        private System.Windows.Forms.Label path;
     }
 }
 

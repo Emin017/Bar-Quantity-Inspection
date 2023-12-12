@@ -16,6 +16,12 @@ namespace Demo2
         public Form1()
         {
             InitializeComponent();
+            open_button.Enabled = true;
+            exit.Enabled = true;
+            ROI_Button.Enabled = false;
+            count_button.Enabled = false;
+            add_num.Enabled = false;
+            reduce_num.Enabled = false;
         }
         HObject ho_image, ho_Rectangle;
         HTuple hv_Number = new HTuple();
@@ -23,6 +29,12 @@ namespace Demo2
         {
             try
             {
+                open_button.Enabled = true;
+                exit.Enabled = true;
+                ROI_Button.Enabled = true;
+                count_button.Enabled = false;
+                add_num.Enabled = false;
+                reduce_num.Enabled = false;
                 HTuple hv_width = new HTuple(), hv_Height = new HTuple();
                 HTuple hv_UsedThreshold = new HTuple();
 
@@ -31,12 +43,13 @@ namespace Demo2
                 opnDlg.Filter = "All image files |*.bmp;*.jpg;*.gif;*.png";
                 if (opnDlg.ShowDialog() == DialogResult.OK)
                 {
-                    image_Path = opnDlg.FileName;
-                    HOperatorSet.ReadImage(out ho_image, image_Path);
+                  image_Path = opnDlg.FileName;
+                  path.Text = image_Path.ToString();
+                  HOperatorSet.ReadImage(out ho_image, image_Path);
 
-                    HOperatorSet.GetImageSize(ho_image, out hv_width, out hv_Height);
-                    HOperatorSet.SetPart(hWindowControl1.HalconWindow, 0, 0, hv_Height - 1, hv_width - 1);
-                    HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
+                  HOperatorSet.GetImageSize(ho_image, out hv_width, out hv_Height);
+                  HOperatorSet.SetPart(hWindowControl1.HalconWindow, 0, 0, hv_Height - 1, hv_width - 1);
+                  HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
                 }
             }
             catch
@@ -56,11 +69,22 @@ namespace Demo2
             out hv_Column2);
             HOperatorSet.GenRectangle1(out ho_Rectangle, hv_Row1, hv_Column1, hv_Row2, hv_Column2);
             HOperatorSet.DispObj(ho_Rectangle, hWindowControl1.HalconWindow);
-
+            open_button.Enabled = true;
+            exit.Enabled = true;
+            ROI_Button.Enabled = false;
+            count_button.Enabled = true;
+            add_num.Enabled = false;
+            reduce_num.Enabled = false;
         }
 
         private void count_button_Click(object sender, EventArgs e)
         {
+            open_button.Enabled = true;
+            exit.Enabled = true;
+            ROI_Button.Enabled = false;
+            count_button.Enabled = false;
+            add_num.Enabled = true;
+            reduce_num.Enabled = true;
             HObject ho_GrayImage, ho_ImageReduced, ho_ImageScaleMax;
             HObject ho_Region1, ho_ConnectedRegions, ho_SelectedRegions, ho_RegionErosion;
             HTuple hv_UsedThreshold = new HTuple();
