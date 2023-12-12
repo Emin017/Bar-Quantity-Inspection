@@ -352,5 +352,10 @@ namespace Demo2
         {
             Application.Exit();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            data.Text = DateTime.Now.ToString("yyy年MM月dd日 hh:mm:ss");
+        }
     }
 }
