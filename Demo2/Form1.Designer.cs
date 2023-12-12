@@ -63,6 +63,7 @@
             this.ROI_Button.TabIndex = 2;
             this.ROI_Button.Text = "ROI选择";
             this.ROI_Button.UseVisualStyleBackColor = true;
+            this.ROI_Button.Click += new System.EventHandler(this.ROI_Button_Click);
             // 
             // count_button
             // 
