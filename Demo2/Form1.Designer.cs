@@ -35,6 +35,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.reduce_num = new System.Windows.Forms.Button();
             this.add_num = new System.Windows.Forms.Button();
+            this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // hWindowControl1
@@ -87,7 +88,7 @@
             // 
             // reduce_num
             // 
-            this.reduce_num.Location = new System.Drawing.Point(863, 501);
+            this.reduce_num.Location = new System.Drawing.Point(863, 602);
             this.reduce_num.Name = "reduce_num";
             this.reduce_num.Size = new System.Drawing.Size(162, 35);
             this.reduce_num.TabIndex = 6;
@@ -97,7 +98,7 @@
             // 
             // add_num
             // 
-            this.add_num.Location = new System.Drawing.Point(863, 383);
+            this.add_num.Location = new System.Drawing.Point(863, 484);
             this.add_num.Name = "add_num";
             this.add_num.Size = new System.Drawing.Size(162, 40);
             this.add_num.TabIndex = 5;
@@ -105,11 +106,22 @@
             this.add_num.UseVisualStyleBackColor = true;
             this.add_num.Click += new System.EventHandler(this.add_num_Click);
             // 
+            // exit
+            // 
+            this.exit.Location = new System.Drawing.Point(863, 366);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(162, 38);
+            this.exit.TabIndex = 7;
+            this.exit.Text = "退出";
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 778);
+            this.Controls.Add(this.exit);
             this.Controls.Add(this.reduce_num);
             this.Controls.Add(this.add_num);
             this.Controls.Add(this.textBox1);
@@ -133,6 +145,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button reduce_num;
         private System.Windows.Forms.Button add_num;
+        private System.Windows.Forms.Button exit;
     }
 }
 

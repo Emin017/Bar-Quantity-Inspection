@@ -323,5 +323,10 @@ namespace Demo2
                 throw HDevExpDefaultException;
             }
         }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
