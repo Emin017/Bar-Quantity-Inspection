@@ -86,5 +86,18 @@ namespace Demo2
             HOperatorSet.DispObj(ho_SelectedRegions, hWindowControl1.HalconWindow);
 
         }
+
+        private void add_num_Click(object sender, EventArgs e)
+        {
+            hv_Number += 1;
+            textBox1.Text = hv_Number.ToString();
+        }
+
+        private void reduce_num_Click(object sender, EventArgs e)
+        {
+            hv_Number -= 1;
+            if (hv_Number < 0) hv_Number=0;
+            textBox1.Text = hv_Number.ToString();
+        }
     }
 }
