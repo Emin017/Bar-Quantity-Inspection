@@ -33,7 +33,7 @@
             this.open_button = new System.Windows.Forms.Button();
             this.ROI_Button = new System.Windows.Forms.Button();
             this.count_button = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.result = new System.Windows.Forms.TextBox();
             this.reduce_num = new System.Windows.Forms.Button();
             this.add_num = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
@@ -45,9 +45,22 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.data = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.ID = new System.Windows.Forms.Label();
+            this.ID_text = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.Label();
+            this.name_text = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // hWindowControl1
@@ -91,13 +104,13 @@
             this.count_button.UseVisualStyleBackColor = true;
             this.count_button.Click += new System.EventHandler(this.count_button_Click);
             // 
-            // textBox1
+            // result
             // 
-            this.textBox1.Location = new System.Drawing.Point(36, 46);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 43);
-            this.textBox1.TabIndex = 4;
+            this.result.Location = new System.Drawing.Point(36, 46);
+            this.result.Multiline = true;
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(131, 43);
+            this.result.TabIndex = 4;
             // 
             // reduce_num
             // 
@@ -191,7 +204,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.result);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Desktop;
             this.groupBox3.Location = new System.Drawing.Point(1036, 605);
             this.groupBox3.Name = "groupBox3";
@@ -216,11 +229,102 @@
             this.data.TabIndex = 15;
             this.data.Text = "label1";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.ID_text);
+            this.groupBox4.Controls.Add(this.ID);
+            this.groupBox4.Controls.Add(this.name);
+            this.groupBox4.Controls.Add(this.name_text);
+            this.groupBox4.Location = new System.Drawing.Point(834, 176);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(173, 146);
+            this.groupBox4.TabIndex = 16;
+            this.groupBox4.TabStop = false;
+            // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.Location = new System.Drawing.Point(11, 105);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(44, 18);
+            this.ID.TabIndex = 2;
+            this.ID.Text = "工号";
+            // 
+            // ID_text
+            // 
+            this.ID_text.Location = new System.Drawing.Point(61, 102);
+            this.ID_text.Name = "ID_text";
+            this.ID_text.Size = new System.Drawing.Size(93, 28);
+            this.ID_text.TabIndex = 3;
+            // 
+            // name
+            // 
+            this.name.AutoSize = true;
+            this.name.Location = new System.Drawing.Point(11, 38);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(44, 18);
+            this.name.TabIndex = 1;
+            this.name.Text = "姓名";
+            // 
+            // name_text
+            // 
+            this.name_text.Location = new System.Drawing.Point(61, 35);
+            this.name_text.Name = "name_text";
+            this.name_text.Size = new System.Drawing.Size(93, 28);
+            this.name_text.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dataGridView1.Location = new System.Drawing.Point(59, 633);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 30;
+            this.dataGridView1.Size = new System.Drawing.Size(730, 161);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "编号";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 60;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "时间";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 160;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "姓名";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 80;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "工号";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 120;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "棒材数量";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 80;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 778);
+            this.ClientSize = new System.Drawing.Size(1273, 831);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.data);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label2);
@@ -235,6 +339,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,7 +353,7 @@
         private System.Windows.Forms.Button open_button;
         private System.Windows.Forms.Button ROI_Button;
         private System.Windows.Forms.Button count_button;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox result;
         private System.Windows.Forms.Button reduce_num;
         private System.Windows.Forms.Button add_num;
         private System.Windows.Forms.Button exit;
@@ -258,6 +365,17 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label data;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox ID_text;
+        private System.Windows.Forms.Label ID;
+        private System.Windows.Forms.Label name;
+        private System.Windows.Forms.TextBox name_text;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
 

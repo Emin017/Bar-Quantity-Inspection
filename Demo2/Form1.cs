@@ -28,6 +28,12 @@ namespace Demo2
         HTuple hv_Number = new HTuple();
         private void open_button_Click(object sender, EventArgs e)
         {
+          if (name.Text.Trim().Length==0 || ID.Text.Trim().Length==0)
+          {
+            MessageBox.Show("请输入姓名和工号信息");
+          }
+          else
+          {
             try
             {
                 open_button.Enabled = true;
@@ -57,6 +63,7 @@ namespace Demo2
             {
                 MessageBox.Show("Program Error!");
             }
+          }
         }
 
         private void ROI_Button_Click(object sender, EventArgs e)
@@ -78,6 +85,7 @@ namespace Demo2
             reduce_num.Enabled = false;
         }
 
+    int number = 0;
         private void count_button_Click(object sender, EventArgs e)
         {
             open_button.Enabled = true;
@@ -104,7 +112,7 @@ namespace Demo2
                                     "and", 500, 5000);
             HOperatorSet.CountObj(ho_SelectedRegions, out hv_Number);
 
-            textBox1.Text = hv_Number.ToString();
+            result.Text = hv_Number.ToString();
             HOperatorSet.ClearWindow(hWindowControl1.HalconWindow);
             HOperatorSet.SetDraw(hWindowControl1.HalconWindow, "fill");
             HOperatorSet.DispObj(ho_image, hWindowControl1.HalconWindow);
@@ -112,19 +120,28 @@ namespace Demo2
             set_display_font(hWindowControl1.HalconWindow, 30, "mono", "true", "false");
             HOperatorSet.SetTposition(hWindowControl1.HalconWindow, 10, 10);
             HOperatorSet.WriteString(hWindowControl1.HalconWindow, "初始数量: "+hv_Number);
+
+            number += 1;
+            int index = dataGridView1.Rows.Add();
+            dataGridView1.Rows[index].Cells[0].Value = number;
+            dataGridView1.Rows[index].Cells[1].Value = data.Text;
+            dataGridView1.Rows[index].Cells[2].Value = name_text.Text;
+            dataGridView1.Rows[index].Cells[3].Value = ID_text.Text;
+            dataGridView1.Rows[index].Cells[4].Value = hv_Number;
+
         }
 
         private void add_num_Click(object sender, EventArgs e)
         {
             hv_Number += 1;
-            textBox1.Text = hv_Number.ToString();
+            result.Text = hv_Number.ToString();
         }
 
         private void reduce_num_Click(object sender, EventArgs e)
         {
             hv_Number -= 1;
             if (hv_Number < 0) hv_Number=0;
-            textBox1.Text = hv_Number.ToString();
+            result.Text = hv_Number.ToString();
         }
 
         public void set_display_font (HTuple hv_WindowHandle, HTuple hv_Size, HTuple hv_Font, 
