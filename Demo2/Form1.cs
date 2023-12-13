@@ -22,6 +22,7 @@ namespace Demo2
             count_button.Enabled = false;
             add_num.Enabled = false;
             reduce_num.Enabled = false;
+            data.Text = DateTime.Now.ToString("yyy年MM月dd日 hh:mm:ss");
         }
         HObject ho_image, ho_Rectangle;
         HTuple hv_Number = new HTuple();

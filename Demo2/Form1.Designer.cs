@@ -93,10 +93,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(34, 43);
+            this.textBox1.Location = new System.Drawing.Point(36, 46);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 57);
+            this.textBox1.Size = new System.Drawing.Size(131, 43);
             this.textBox1.TabIndex = 4;
             // 
             // reduce_num
@@ -193,7 +193,7 @@
             // 
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.groupBox3.Location = new System.Drawing.Point(1036, 621);
+            this.groupBox3.Location = new System.Drawing.Point(1036, 605);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(207, 115);
             this.groupBox3.TabIndex = 14;
@@ -209,10 +209,10 @@
             // data
             // 
             this.data.AutoSize = true;
-            this.data.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.data.Location = new System.Drawing.Point(857, 142);
+            this.data.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.data.Location = new System.Drawing.Point(829, 108);
             this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(82, 24);
+            this.data.Size = new System.Drawing.Size(96, 28);
             this.data.TabIndex = 15;
             this.data.Text = "label1";
             // 
