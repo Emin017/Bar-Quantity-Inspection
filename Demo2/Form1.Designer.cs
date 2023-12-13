@@ -51,12 +51,12 @@
             this.name = new System.Windows.Forms.Label();
             this.name_text = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.save_button = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.save_button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -69,11 +69,11 @@
             this.hWindowControl1.BackColor = System.Drawing.Color.Black;
             this.hWindowControl1.BorderColor = System.Drawing.Color.Black;
             this.hWindowControl1.ImagePart = new System.Drawing.Rectangle(0, 0, 640, 480);
-            this.hWindowControl1.Location = new System.Drawing.Point(59, 133);
+            this.hWindowControl1.Location = new System.Drawing.Point(39, 133);
             this.hWindowControl1.Name = "hWindowControl1";
-            this.hWindowControl1.Size = new System.Drawing.Size(730, 494);
+            this.hWindowControl1.Size = new System.Drawing.Size(784, 494);
             this.hWindowControl1.TabIndex = 0;
-            this.hWindowControl1.WindowSize = new System.Drawing.Size(730, 494);
+            this.hWindowControl1.WindowSize = new System.Drawing.Size(784, 494);
             // 
             // open_button
             // 
@@ -149,7 +149,7 @@
             this.title.BackColor = System.Drawing.Color.Transparent;
             this.title.Font = new System.Drawing.Font("隶书", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.title.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.title.Location = new System.Drawing.Point(314, 43);
+            this.title.Location = new System.Drawing.Point(624, 86);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(199, 30);
             this.title.TabIndex = 8;
@@ -160,7 +160,7 @@
             this.path.AutoSize = true;
             this.path.BackColor = System.Drawing.Color.Transparent;
             this.path.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.path.Location = new System.Drawing.Point(69, 98);
+            this.path.Location = new System.Drawing.Point(45, 108);
             this.path.Name = "path";
             this.path.Size = new System.Drawing.Size(0, 18);
             this.path.TabIndex = 9;
@@ -174,7 +174,7 @@
             this.groupBox1.Controls.Add(this.count_button);
             this.groupBox1.Controls.Add(this.exit);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.groupBox1.Location = new System.Drawing.Point(1036, 176);
+            this.groupBox1.Location = new System.Drawing.Point(1072, 176);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(207, 372);
             this.groupBox1.TabIndex = 10;
@@ -187,7 +187,7 @@
             this.groupBox2.Controls.Add(this.add_num);
             this.groupBox2.Controls.Add(this.reduce_num);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.groupBox2.Location = new System.Drawing.Point(834, 362);
+            this.groupBox2.Location = new System.Drawing.Point(859, 362);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(179, 186);
             this.groupBox2.TabIndex = 11;
@@ -206,9 +206,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.result);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.groupBox3.Location = new System.Drawing.Point(1036, 605);
+            this.groupBox3.Location = new System.Drawing.Point(1072, 633);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(207, 115);
             this.groupBox3.TabIndex = 14;
@@ -225,7 +226,7 @@
             // 
             this.data.AutoSize = true;
             this.data.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.data.Location = new System.Drawing.Point(829, 108);
+            this.data.Location = new System.Drawing.Point(854, 108);
             this.data.Name = "data";
             this.data.Size = new System.Drawing.Size(96, 28);
             this.data.TabIndex = 15;
@@ -233,15 +234,17 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.ID_text);
             this.groupBox4.Controls.Add(this.ID);
             this.groupBox4.Controls.Add(this.name);
             this.groupBox4.Controls.Add(this.name_text);
-            this.groupBox4.Location = new System.Drawing.Point(834, 176);
+            this.groupBox4.Location = new System.Drawing.Point(859, 176);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(173, 146);
             this.groupBox4.TabIndex = 16;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "信息输入";
             // 
             // ID
             // 
@@ -284,17 +287,27 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(59, 633);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 633);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(730, 161);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 207);
             this.dataGridView1.TabIndex = 17;
+            // 
+            // save_button
+            // 
+            this.save_button.Location = new System.Drawing.Point(20, 250);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(162, 38);
+            this.save_button.TabIndex = 8;
+            this.save_button.Text = "保存";
+            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
             // 
             // Column1
             // 
             this.Column1.HeaderText = "编号";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
+            this.Column1.Width = 60;
             // 
             // Column2
             // 
@@ -320,21 +333,11 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 80;
             // 
-            // save_button
-            // 
-            this.save_button.Location = new System.Drawing.Point(20, 250);
-            this.save_button.Name = "save_button";
-            this.save_button.Size = new System.Drawing.Size(162, 38);
-            this.save_button.TabIndex = 8;
-            this.save_button.Text = "保存";
-            this.save_button.UseVisualStyleBackColor = true;
-            this.save_button.Click += new System.EventHandler(this.save_button_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1273, 831);
+            this.ClientSize = new System.Drawing.Size(1303, 872);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.data);
@@ -383,12 +386,12 @@
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.TextBox name_text;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button save_button;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Button save_button;
     }
 }
 
