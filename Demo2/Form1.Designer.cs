@@ -292,7 +292,7 @@
             // 
             this.Column1.HeaderText = "编号";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 60;
+            this.Column1.Width = 50;
             // 
             // Column2
             // 

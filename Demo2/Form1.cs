@@ -135,6 +135,8 @@ namespace Demo2
         {
             hv_Number += 1;
             result.Text = hv_Number.ToString();
+            int index = dataGridView1.Rows.Count - 2;
+            dataGridView1.Rows[index].Cells[4].Value = hv_Number;
         }
 
         private void reduce_num_Click(object sender, EventArgs e)
@@ -142,6 +144,8 @@ namespace Demo2
             hv_Number -= 1;
             if (hv_Number < 0) hv_Number=0;
             result.Text = hv_Number.ToString();
+            int index = dataGridView1.Rows.Count - 2;
+            dataGridView1.Rows[index].Cells[4].Value = hv_Number;
         }
 
         public void set_display_font (HTuple hv_WindowHandle, HTuple hv_Size, HTuple hv_Font, 
