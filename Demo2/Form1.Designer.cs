@@ -56,6 +56,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.save_button = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -96,7 +97,7 @@
             // 
             // count_button
             // 
-            this.count_button.Location = new System.Drawing.Point(20, 184);
+            this.count_button.Location = new System.Drawing.Point(20, 176);
             this.count_button.Name = "count_button";
             this.count_button.Size = new System.Drawing.Size(162, 44);
             this.count_button.TabIndex = 3;
@@ -167,6 +168,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.save_button);
             this.groupBox1.Controls.Add(this.open_button);
             this.groupBox1.Controls.Add(this.ROI_Button);
             this.groupBox1.Controls.Add(this.count_button);
@@ -318,6 +320,16 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 80;
             // 
+            // save_button
+            // 
+            this.save_button.Location = new System.Drawing.Point(20, 250);
+            this.save_button.Name = "save_button";
+            this.save_button.Size = new System.Drawing.Size(162, 38);
+            this.save_button.TabIndex = 8;
+            this.save_button.Text = "保存";
+            this.save_button.UseVisualStyleBackColor = true;
+            this.save_button.Click += new System.EventHandler(this.save_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -376,6 +388,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button save_button;
     }
 }
 

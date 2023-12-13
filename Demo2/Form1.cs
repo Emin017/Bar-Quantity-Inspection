@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HalconDotNet;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Demo2
 {
@@ -378,6 +379,51 @@ namespace Demo2
         private void timer1_Tick(object sender, EventArgs e)
         {
             data.Text = DateTime.Now.ToString("yyy年MM月dd日 hh:mm:ss");
+        }
+
+        private void save_button_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            //string path = "..  .. L..\\" + textBox2.Text + "_" + DateTime.Now.ToLongDateString().ToString() + ".csv";
+            saveDialog.Title ="保存为";
+            saveDialog.Filter = "Excel文件|*.xlsx|Excel(2003文件)|*.xls";
+            if (saveDialog.ShowDialog()== DialogResult.OK)
+            {
+                //获取用户选择的文件名
+                string fi1eName = saveDialog.FileName;//用于判断电脑是否安装exce1
+                Excel.Application application = new Excel.Application();
+                Excel.Workbooks workbooks = application.Workbooks;
+                Excel.Workbook workbook = workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet); 
+                Excel.Worksheet worksheet = workbook.Worksheets[1];
+                //判断电脑安装exce1没有
+                if (application == null)
+                {
+                    MessageBox.Show("电脑未安装EXCEL，无法创建EXCEL对象。");
+                    return;
+                }
+                //导出DataGridview中的标题
+                for (int i = 0; i < dataGridView1.ColumnCount; i++)
+                {
+                    if (dataGridView1.Columns[i].Visible)
+                    {
+                        worksheet.Cells[1, i + 1] = dataGridView1.Columns[i].HeaderText;
+                    }
+                }
+                //导出DataGridView中的数据
+                for (int i = 0; i < dataGridView1.RowCount; i++){
+                    for (int j = 0; j < dataGridView1.ColumnCount; j++){
+                        if (dataGridView1.Columns[j].Visible)
+                        {
+                            worksheet.Cells[i + 2, j+1]= "'" + dataGridView1.Rows[i].Cells[j].Value;
+                        }
+                    }
+                 }
+                  //保存文件
+                workbook.SaveAs(fi1eName);//列宽自适应
+                worksheet.Columns.EntireColumn.AutoFit();
+                application.Quit();
+                MessageBox.Show("导出成功");
+            }
         }
     }
 }
